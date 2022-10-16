@@ -1,0 +1,32 @@
+{
+  "name": "444-oct-22",
+  "version": "1.0.0",
+  "description": "Redesign front-end and shed Node app. Pivot to 3-D.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Simmer999/444-Oct-22.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Simmer999/444-Oct-22/issues"
+  },
+  "dependencies": {
+    "gsap": "^3.10.4",
+    "three": "^0.139.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16",    
+    "@parcel/config-default": "^2.4.0",
+    "parcel-reporter-static-files-copy": "^1.3.4"
+  },
+  "staticFiles": {
+    "staticOutPath": "assets"
+  },
+  "homepage": "https://github.com/Simmer999/444-Oct-22#readme"
+}

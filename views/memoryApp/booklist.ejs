@@ -1,0 +1,22 @@
+<%- include('../partials/membersHead'); %>
+<link rel="stylesheet" type="text/css" href="/css/members.css">
+<link rel="stylesheet" type="text/css" href="/css/navbar_members.css">
+<title>5554 Book List</title>
+</head>
+<body>
+    <%- include('../partials/navbar_members'); %>
+    <div class='spacer'></div>
+ 
+        <div >
+            <a href="/add-user" class="button_addUser">
+                <span id='add_userButton' class="text-gradient">Add a New Book <i class="fas fa-user"></i></span>
+            </a>
+        </div>
+        <form class="purpleBox purpleBoxXX" class="" action="/" method="POST">
+            <%- include('../include/_show') %>
+        </form>
+    </div>
+    <!-- <script>
+document.getElementById("demo").innerHTML = "Page path is " + window.location.pathname;
+    </script> -->
+<%- include('../include/_footer') %>

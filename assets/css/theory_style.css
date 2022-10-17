@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "arial";
+    /* font-size: 1.2rem; 
+    font-weight: 900; */
+}
+/* .index {
+     background-image: url("mountain_lake.jpg") no-repeat center center fixed; 
+} */
+/* body {
+    background: url("img/mountain_lake.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} */
+#index_BG {
+    background: url("/img/images/mountain_lake.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#papers_BG {
+    background: url("img/moraine-lake.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.menuButton {
+    display: inline;
+    margin-left: 25px;
+    
+}
+
+footer {
+    justify-content: space-around;
+    display: flex;
+    background: #222;
+    border-top: #333;
+    border-bottom: #333;
+    color: #fff;
+    position: fixed;
+    height: 75px;
+    width: 100%;
+    bottom: 0;
+    font-size: 1.3rem;
+    /* font-family: "Roboto";
+    font-weight: 600; */
+    padding-top: 25px;
+}
+.container {
+    position: relative;
+}
+.afterFoooter {
+    width: 100%;
+    top: 200px;
+    height: 1000px;
+}
+#name {
+    position: fixed;
+    top: 70%;
+    left: 5%;
+    color: #fff;
+    text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
+h1 {
+    font-family: "arial";
+    font-size: 2.4rem; 
+    font-weight: 900;
+    letter-spacing: 5px;
+    display: inline;
+}
+h2 {
+    font-family: "arial";
+    font-size: 2.0rem; 
+    font-weight: 900;
+    letter-spacing: 5px;
+    display: inline;
+}
+h3 {
+    font-family: "arial";
+    font-size: 1.2rem; 
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}

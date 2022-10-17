@@ -150,6 +150,9 @@ route.get('/sphere', (req, res) => {
 route.get('/space', (req, res) => {
     res.render('simmer999/space')
 })
+route.get('/theory', (req, res) => {
+    res.render('simmer999/theory')
+})
 // =================================================
 
 // 5======= MemoryApp Modification routes

@@ -21,9 +21,9 @@ app.use(session({
     resave : true,
     saveUninitialized : true
 }))
-// app.use(passport.initialize())
-// app.use(passport.session())
-// require('./api/config/passport')(passport);
+app.use(passport.initialize())
+app.use(passport.session())
+require('./api/config/passport')(passport);
 
 
 
@@ -34,7 +34,7 @@ app.use(session({
 
 
 
-// const connectDB = require('./server/database/connection');
+const connectDB = require('./server/database/connection');
 
 dotenv.config( { path : 'config.env'} )
 const PORT = process.env.PORT || 5554
@@ -59,6 +59,7 @@ app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 app.use('/src', express.static(path.resolve(__dirname, "assets/src")))
+app.use('/Papers', express.static(path.resolve(__dirname, "assets/Papers")))
 
 // load routers
 app.use('/', require('./server/routes/router'))

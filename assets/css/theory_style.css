@@ -3,19 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "arial";
-    /* font-size: 1.2rem; 
-    font-weight: 900; */
 }
-/* .index {
-     background-image: url("mountain_lake.jpg") no-repeat center center fixed; 
-} */
-/* body {
-    background: url("img/mountain_lake.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-} */
 #index_BG {
     background: url("/img/images/mountain_lake.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -32,10 +20,8 @@
 }
 .menuButton {
     display: inline;
-    margin-left: 25px;
-    
+    margin-left: 25px;    
 }
-
 footer {
     justify-content: space-around;
     display: flex;
@@ -63,6 +49,13 @@ footer {
 #name {
     position: fixed;
     top: 70%;
+    left: 5%;
+    color: #fff;
+    text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
+#home {
+    position: fixed;
+    top: 80%;
     left: 5%;
     color: #fff;
     text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;

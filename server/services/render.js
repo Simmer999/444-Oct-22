@@ -5,7 +5,7 @@ exports.homeRoutes = (req, res) => {
     // Make a get request to /api/users
     // axios.get('https://localhost:5554/api/users')
     //     .then(function(response){
-            res.render('cube');
+            res.render('enter');
         // })
         // .catch(err =>{
         //     res.send(err);

@@ -1,4 +1,11 @@
-			THREE.Cache.enabled = true;
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118.3/build/three.module.js';
+// import * as THREE from 'https://unpkg.com/three@0.139/build/three.module.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.139/examples/jsm/controls/OrbitControls.js';
+import { FontLoader } from 'https://cdn.jsdelivr.net/npm/three@0.139/examples/jsm/loaders/FontLoader.js';
+// import { TextGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.139/examples/jsm/geometries/TextGeometry.js';
+// import Stats from 'https://unpkg.com/three@0.139/examples/jsm/libs/stats.module.js';
+// import * as THREE from 'three'
+THREE.Cache.enabled = true;
 			let container, stats, permalink, hex;
 			let camera, cameraTarget, scene, renderer;
 			let group, textMesh1, textMesh2, textGeo, materials;
@@ -235,13 +242,4 @@ function render() {
     renderer.render( scene, camera );
 }
         const controls = new OrbitControls( camera, renderer.domElement )
-
-        
-        // import * as THREE from 'three'
-        // import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118.3/build/three.module.js';
-        // import * as THREE from 'https://unpkg.com/three@0.139/build/three.module.js';
-        import { OrbitControls } from 'https://unpkg.com/three@0.139/examples/jsm/controls/OrbitControls.js';
-        import { FontLoader } from 'https://cdn.jsdelivr.net/npm/three@0.139/examples/jsm/loaders/FontLoader.js';
-        // import { TextGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.139/examples/jsm/geometries/TextGeometry.js';
-        // import Stats from 'https://unpkg.com/three@0.139/examples/jsm/libs/stats.module.js';
-                   
+                  

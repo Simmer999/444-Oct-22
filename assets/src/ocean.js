@@ -1,3 +1,8 @@
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.127/build/three.module.js'
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.127/examples/jsm/controls/OrbitControls.js';
+import { Water } from 'https://cdn.jsdelivr.net/npm/three@0.127/examples/jsm/objects/Water.js';
+import { Sky } from 'https://cdn.jsdelivr.net/npm/three@0.127/examples/jsm/objects/Sky.js';
+
 function SceneManager() {
 const scene = new THREE.Scene()
 const renderer = new THREE.WebGLRenderer()
@@ -68,7 +73,3 @@ function animate() {
 }
 animate()
 
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.127/build/three.module.js'
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.127/examples/jsm/controls/OrbitControls.js';
-import { Water } from 'https://cdn.jsdelivr.net/npm/three@0.127/examples/jsm/objects/Water.js';
-import { Sky } from 'https://cdn.jsdelivr.net/npm/three@0.127/examples/jsm/objects/Sky.js';

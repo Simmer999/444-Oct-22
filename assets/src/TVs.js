@@ -1,7 +1,8 @@
-import * as THREE from 'three';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.127/build/three.module.js'
 
-			import Stats from 'three/addons/libs/stats.module.js';
-			import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+
+			// import Stats from 'https://cdnjs.cloudflare.com/ajax/libs/stats.js/7/Stats.js';
+			// import { GUI } from 'https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.js';
 
 			let camera, scene, renderer, stats;
 
@@ -22,7 +23,7 @@ import * as THREE from 'three';
 				scene = new THREE.Scene();
 
 				const loader = new THREE.BufferGeometryLoader();
-				loader.load( 'models/json/suzanne_buffergeometry.json', function ( geometry ) {
+				loader.load( 'json/suzanne_buffergeometry.json', function ( geometry ) {
 
 					geometry.computeVertexNormals();
 					geometry.scale( 0.5, 0.5, 0.5 );
@@ -37,8 +38,8 @@ import * as THREE from 'three';
 
 					//
 
-					const gui = new GUI();
-					gui.add( mesh, 'count', 0, count );
+					// const gui = new GUI();
+					// gui.add( mesh, 'count', 0, count );
 
 				} );
 
@@ -51,8 +52,8 @@ import * as THREE from 'three';
 
 				//
 
-				stats = new Stats();
-				document.body.appendChild( stats.dom );
+				// stats = new Stats();
+				// document.body.appendChild( stats.dom );
 
 				//
 
@@ -77,7 +78,7 @@ import * as THREE from 'three';
 
 				render();
 
-				stats.update();
+				// stats.update();
 
 			}
 

@@ -132,6 +132,9 @@ route.post('/register', (req, res) => {
 route.get('/home', (req, res) => {
     res.render('simmer999/home')
 })
+route.get('/TVs', (req, res) => {
+    res.render('simmer999/TVs')
+})
 route.get('/skybox', (req, res) => {
     res.render('simmer999/skybox')
 })

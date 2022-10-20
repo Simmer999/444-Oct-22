@@ -60,6 +60,7 @@ app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 app.use('/src', express.static(path.resolve(__dirname, "assets/src")))
 app.use('/Papers', express.static(path.resolve(__dirname, "assets/Papers")))
+app.use('/json', express.static(path.resolve(__dirname, "assets/json")))
 
 // load routers
 app.use('/', require('./server/routes/router'))

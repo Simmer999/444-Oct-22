@@ -7,7 +7,9 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.127/build/three.mod
 			let camera, scene, renderer, stats;
 
 			let mesh;
-			const amount = parseInt( window.location.search.slice( 1 ) ) || 10;
+			const amount = parseInt(
+                //  window.location.search.slice( 1 ) ) || 
+                 10);
 			const count = Math.pow( amount, 3 );
 			const dummy = new THREE.Object3D();
 
@@ -88,8 +90,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.127/build/three.mod
 
 					const time = Date.now() * 0.001;
 
-					mesh.rotation.x = Math.sin( time / 4 );
-					mesh.rotation.y = Math.sin( time / 2 );
+					// mesh.rotation.x = Math.sin( time / 4 );
+					// mesh.rotation.y = Math.sin( time / 2 );
 
 					let i = 0;
 					const offset = ( amount - 1 ) / 2;
@@ -101,7 +103,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.127/build/three.mod
 							for ( let z = 0; z < amount; z ++ ) {
 
 								dummy.position.set( offset - x, offset - y, offset - z );
-								dummy.rotation.y = ( Math.sin( x / 4 + time ) + Math.sin( y / 4 + time ) + Math.sin( z / 4 + time ) );
+								// dummy.rotation.y = ( Math.sin( x / 4 + time ) + Math.sin( y / 4 + time ) + Math.sin( z / 4 + time ) );
 								dummy.rotation.z = dummy.rotation.y * 2;
 
 								dummy.updateMatrix();

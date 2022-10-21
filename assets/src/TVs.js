@@ -1,125 +1,129 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.127/build/three.module.js'
 
 
-			// import Stats from 'https://cdnjs.cloudflare.com/ajax/libs/stats.js/7/Stats.js';
-			// import { GUI } from 'https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.js';
+// import {Stats} from 'https://cdnjs.cloudflare.com/ajax/libs/stats.js/7/Stats.js';
+// import { GUI } from 'https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.js';
 
-			let camera, scene, renderer, stats;
+let camera, scene, renderer, stats;
 
-			let mesh;
-			const amount = parseInt(
-                //  window.location.search.slice( 1 ) ) || 
-                 10);
-			const count = Math.pow( amount, 3 );
-			const dummy = new THREE.Object3D();
+let mesh;
+const amount = parseInt(
+    //  window.location.search.slice( 50 ) ) || 
+        10);
+const count = Math.pow( amount, 3 );
+const dummy = new THREE.Object3D();
 
-			init();
-			animate();
+init();
+animate();
 
-			function init() {
+function init() {
 
-				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.1, 100 );
-				camera.position.set( amount * 0.9, amount * 0.9, amount * 0.9 );
-				camera.lookAt( 0, 0, 0 );
+    camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.1, 100 );
+    camera.position.set( amount * 0.9, amount * 0.9, amount * 0.9 );
+    camera.lookAt( 0, 0, 0 );
 
-				scene = new THREE.Scene();
+    scene = new THREE.Scene();
 
-				const loader = new THREE.BufferGeometryLoader();
-				loader.load( 'json/suzanne_buffergeometry.json', function ( geometry ) {
+    const loader = new THREE.BufferGeometryLoader();
+    loader.load( 'json/suzanne_buffergeometry.json', function ( geometry ) {
 
-					geometry.computeVertexNormals();
-					geometry.scale( 0.5, 0.5, 0.5 );
+//============================================================================
+//============================================================================
+        geometry.computeVertexNormals(); //=======================
+        geometry.scale( 0.5, 0.5, 0.5 ); //=======================
+//============================================================================
+//============================================================================
 
-					const material = new THREE.MeshNormalMaterial();
-					// check overdraw
-					// let material = new THREE.MeshBasicMaterial( { color: 0xff0000, opacity: 0.1, transparent: true } );
+        const material = new THREE.MeshNormalMaterial();
+        // check overdraw
+        // let material = new THREE.MeshBasicMaterial( { color: 0xff0000, opacity: 0.1, transparent: true } );
 
-					mesh = new THREE.InstancedMesh( geometry, material, count );
-					mesh.instanceMatrix.setUsage( THREE.DynamicDrawUsage ); // will be updated every frame
-					scene.add( mesh );
+        mesh = new THREE.InstancedMesh( geometry, material, count );
+        mesh.instanceMatrix.setUsage( THREE.DynamicDrawUsage ); // will be updated every frame
+        scene.add( mesh );
 
-					//
+        //
 
-					// const gui = new GUI();
-					// gui.add( mesh, 'count', 0, count );
+        // const gui = new GUI();
+        // gui.add( mesh, 'count', 0, count );
 
-				} );
+    } );
 
-				//
+    //
 
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				document.body.appendChild( renderer.domElement );
+    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
 
-				//
+    //
 
-				// stats = new Stats();
-				// document.body.appendChild( stats.dom );
+    // stats = new Stats();
+    // document.body.appendChild( stats.dom );
 
-				//
+    //
 
-				window.addEventListener( 'resize', onWindowResize );
+    window.addEventListener( 'resize', onWindowResize );
 
-			}
+}
 
-			function onWindowResize() {
+function onWindowResize() {
 
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize( window.innerWidth, window.innerHeight );
 
-			}
+}
 
-			//
+//
 
-			function animate() {
+function animate() {
 
-				requestAnimationFrame( animate );
+    requestAnimationFrame( animate );
 
-				render();
+    render();
 
-				// stats.update();
+    // stats.update();
 
-			}
+}
 
-			function render() {
+function render() {
 
-				if ( mesh ) {
+    if ( mesh ) {
 
-					const time = Date.now() * 0.001;
+        const time = Date.now() * 0.001;
 
-					// mesh.rotation.x = Math.sin( time / 4 );
-					// mesh.rotation.y = Math.sin( time / 2 );
+        mesh.rotation.x = Math.sin( time / 4 );
+        mesh.rotation.y = Math.sin( time / 2 );
 
-					let i = 0;
-					const offset = ( amount - 1 ) / 2;
+        let i = 0;
+        const offset = ( amount - 1 ) / 2;
 
-					for ( let x = 0; x < amount; x ++ ) {
+        for ( let x = 0; x < amount; x ++ ) {
 
-						for ( let y = 0; y < amount; y ++ ) {
+            for ( let y = 0; y < amount; y ++ ) {
 
-							for ( let z = 0; z < amount; z ++ ) {
+                for ( let z = 0; z < amount; z ++ ) {
 
-								dummy.position.set( offset - x, offset - y, offset - z );
-								// dummy.rotation.y = ( Math.sin( x / 4 + time ) + Math.sin( y / 4 + time ) + Math.sin( z / 4 + time ) );
-								dummy.rotation.z = dummy.rotation.y * 2;
+                    dummy.position.set( offset - x, offset - y, offset - z );
+                    dummy.rotation.y = ( Math.sin( x / 4 + time ) + Math.sin( y / 4 + time ) + Math.sin( z / 4 + time ) );
+                    dummy.rotation.z = dummy.rotation.y * 2;
 
-								dummy.updateMatrix();
+                    dummy.updateMatrix();
 
-								mesh.setMatrixAt( i ++, dummy.matrix );
+                    mesh.setMatrixAt( i ++, dummy.matrix );
 
-							}
+                }
 
-						}
+            }
 
-					}
+        }
 
-					mesh.instanceMatrix.needsUpdate = true;
+        mesh.instanceMatrix.needsUpdate = true;
 
-				}
+    }
 
-				renderer.render( scene, camera );
+    renderer.render( scene, camera );
 
-			}
+}

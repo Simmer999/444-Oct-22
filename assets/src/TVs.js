@@ -19,7 +19,7 @@ animate();
 function init() {
 
     camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.1, 100 );
-    camera.position.set( amount * 0.9, amount * 0.9, amount * 0.9 );
+    camera.position.set( amount * 2.9, amount * 0.9, amount * 0.9 );
     camera.lookAt( 0, 0, 0 );
 
     scene = new THREE.Scene();
@@ -29,8 +29,8 @@ function init() {
 
 //============================================================================
 //============================================================================
-        geometry.computeVertexNormals(); //=======================
-        geometry.scale( 0.5, 0.5, 0.5 ); //=======================
+        geometry.computeVertexNormals(); //===================================
+        geometry.scale( 0.5, 0.5, 0.5 ); //===================================
 //============================================================================
 //============================================================================
 
@@ -107,8 +107,8 @@ function render() {
                 for ( let z = 0; z < amount; z ++ ) {
 
                     dummy.position.set( offset - x, offset - y, offset - z );
-                    dummy.rotation.y = ( Math.sin( x / 4 + time ) + Math.sin( y / 4 + time ) + Math.sin( z / 4 + time ) );
-                    dummy.rotation.z = dummy.rotation.y * 2;
+                    dummy.rotation.y = ( Math.sin( x / 4 + time ) + Math.sin( y / 4 + time ) + Math.sin( z / 4 + time ) ); // = Stops all of Suzane's rotation.
+                    dummy.rotation.z = dummy.rotation.y * 2; //================virtical axis of Suzanne.
 
                     dummy.updateMatrix();
 

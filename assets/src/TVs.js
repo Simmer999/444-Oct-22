@@ -124,17 +124,43 @@ function render() {
 
     }
 
-    renderer.render( scene, camera );
+
+
+    window.addEventListener('mouseup', function() {
+        console.log(camera.position)
+        switch(position) {
+            case 0:
+                    moveCamera(0, 0, 1);
+                    // rotateCamera(0.3, 1.65, -0.3);
+                    rotateCamera(0, 0, 0);
+                    position = 0;
+            }
+            
+        });
+        function moveCamera(x, y, z) {
+            gsap.to(camera.position, {
+                x,
+                y,
+                z,
+                duration: 3
+            });
+        }
+    
+        function rotateCamera(x, y, z) {
+            gsap.to(camera.rotation, {
+                x,
+                y,
+                z,
+                duration: 3.2
+            });
+        }
+
+renderer.render( scene, camera );
 
 }
-window.addEventListener('move', function() {
-    // console.log(camera.position)
-    switch(position) {
-        case 0:
-                moveCamera(0, 0, 1);
-                // rotateCamera(0.3, 1.65, -0.3);
-                rotateCamera(0, 0, 0);
-                position = 0;
-        }
-        
-    });
+    console.log(camera.position)   
+// function() {
+//     const model = gltf.scene;
+//     scene.add(model);
+   
+// }

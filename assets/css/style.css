@@ -76,6 +76,7 @@ img.burg {
     display: none;
     color: white;
     background-color: #220000;
+    z-index: 10;
 }
   /* Links inside the dropdown */
 .dropdown-content a {

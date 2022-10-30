@@ -135,6 +135,9 @@ route.get('/home', (req, res) => {
 route.get('/TVs', (req, res) => {
     res.render('simmer999/TVs')
 })
+route.get('/home22', (req, res) => {
+    res.render('simmer999/home22')
+})
 route.get('/skybox', (req, res) => {
     res.render('simmer999/skybox')
 })
